@@ -210,8 +210,8 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.target.zip_name }}
-          path: ${{ matrix.target.zip_name }}
+          name: 'ghost_esp_esp32s3_custom.zip'
+          path: '/home/runner/work/Ghost_ESP/Ghost_ESP/build/ghost_esp_esp32s3_custom.zip'
 
       - name: Build Summary
         run: |
