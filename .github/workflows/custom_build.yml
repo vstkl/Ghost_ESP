@@ -208,6 +208,11 @@ jobs:
           zip "../$ZIP_FILE" ./*
           cd ..
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target.zip_name }}
+          path: ${{ matrix.target.zip_name }}
+
       - name: Build Summary
         run: |
           echo "### Build Complete! 🎉" >> $GITHUB_STEP_SUMMARY
