@@ -61,7 +61,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Validate Configuration
         run: |
@@ -207,12 +207,6 @@ jobs:
           cd artifacts
           zip "../$ZIP_FILE" ./*
           cd ..
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: ghost_esp_${{ github.event.inputs.board_type }}_${{ github.event.inputs.display_type }}
-          path: ghost_esp_${{ github.event.inputs.board_type }}_${{ github.event.inputs.display_type }}.zip
 
       - name: Build Summary
         run: |
